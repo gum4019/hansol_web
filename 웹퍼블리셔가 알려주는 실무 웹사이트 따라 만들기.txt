@@ -1,0 +1,37 @@
+[웹퍼블리셔가 알려주는 실무 웹사이트 따라 만들기]
+
+* 디비컷: 웹 에이전시들이 최근 구축한 사이트를 오픈한 것.
+- 강의는 '함솔홈데코'를 참고했음
+
+* Full page Screen Capture
+* Image Downloader
+
+* Header 제작
+
+* <html lang="ko">
+
+* nav는 이름 있어야 함(h태그를 이용하여). 안 보이더라도!
+- display: none; 으로 하면 안 됨. 화면 낭독기 프로그램에 인식 안 됨.
+- position: absolute: left -5000px; 이런 식으로 날리는 게 나음.
+- (응용) 아예 숨기는 태그의 class명을 hide로 하고 css파일에 
+.hide{position: absolute; left:-5000px;}	이런 식으로 응용하자
+
+<<홈페이지 로고>>
+* 클릭할 곳은 가로는 딱 맞게, 세로는 넉넉하게 컬러는 투명으로	//해당 강의는 split 이미지를 써서 a는 딱 맞게 설정해야 함. 
+header {height: 81px; text-align:center;}
+header h1{position: absolute; left: 50px; top: 0; padding: 14px 0 0;}
+header h1 a {display: block; width: 110px; width:81px; color: transparent; background: url(. ./images/sp_com.png) no repeat -300px 0;}
+
+<<대메뉴>>
+*nav가 ul li로 되어 있음
+
+<<관련 메뉴>>
+* 중간에 바	//100% 올리는 게 아니라 딱 가운데 정렬 해야 하니까 본인의 -50% 내려야 함
+header .spot li:after {content:""; position: absolute; left:0; top: 50%; width:1px; height: 7px; background:#ccc; transform: translateY(-50%);}	
+
+*첫번째 것에는 없음
+header .spot li:first-child:after {display:none;}
+
+* position: 
+relative: 현재 위치에서 상대적인 offset 속성을 줄 수 있음
+absolute: 부모 중에 static이 아닌 요소의 위치를 기준으로 상대적인 offset 속성을 줄 수 있음
